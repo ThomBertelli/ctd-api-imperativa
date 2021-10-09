@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "trabalhando":"nodemon index.js -L",
+    "trabalhando": "nodemon index.js -L",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Thomas Breno Bertelli Mendes",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4"
   }
 }
