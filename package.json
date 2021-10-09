@@ -1,0 +1,16 @@
+{
+  "name": "ctd-api-imperativa",
+  "version": "1.0.0",
+  "description": "Aprendendo a construir API ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "trabalhando":"nodemon index.js -L",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas Breno Bertelli Mendes",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
