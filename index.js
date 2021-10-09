@@ -8,7 +8,7 @@ const Professores = require('./listar');
 
 const professores = new Professores();
 
-const handlebars = require('express-hadlebars');
+const handlebars = require('express-handlebars');
 
 
 aplicativo.use(express.json());
@@ -16,19 +16,21 @@ aplicativo.use(express.json());
 aplicativo.use(express.urlencoded({extended: true}));
 
 aplicativo.set('views', './visualizacoes');
-aplicativo.set('view engine', 'hadlebars');
+aplicativo.set('view engine', 'handlebars');
 
-aplicativo.engine('hadlebars', handlebars({defaultlayout: 'modelo'}));
+aplicativo.engine('handlebars', handlebars({ defaultLayout: 'modelo' }));
 
-aplicativo.get('/', (_, res) => res.sendFile(__dirname + '/cadastrar.html'));
+aplicativo.get('/', (_, res) => {res.render('cadastrar')});
 
 aplicativo.get('/listar',(_, res) => {res.json(professores.listar())
 });
 
-aplicativo.post('/cadastrar',(req, _) => {
-const {nome , sobrenome} = req.body;
+aplicativo.post('/cadastrar',(req, res) => {
+    const {nome , sobrenome} = req.body;
 
-new cadastrar(nome, sobrenome);
+    new cadastrar(nome, sobrenome);
+
+    res.render('resultado');
 
 });
 
