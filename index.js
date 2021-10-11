@@ -20,7 +20,7 @@ aplicativo.set('view engine', 'handlebars');
 
 aplicativo.engine('handlebars', handlebars({ defaultLayout: 'modelo' }));
 
-aplicativo.get('/', (_, res) => {res.render('cadastrar')});
+aplicativo.get('/', (_, res) => res.render('cadastrar', {professores: professores.listar()}));
 
 aplicativo.get('/listar',(_, res) => {res.json(professores.listar())
 });
