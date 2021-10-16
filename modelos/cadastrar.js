@@ -1,6 +1,10 @@
 const fs = require('fs');
 
-const arquivo = fs.readFileSync(__dirname + '/banco-de-dados.json', 'utf-8')
+const path = require('path');
+
+const raizDoProjeto = path.resolve('./');
+
+const arquivo = fs.readFileSync(raizDoProjeto + '/banco-de-dados.json', 'utf-8')
 
 const arquivoEmLiteral = JSON.parse(arquivo);
 
@@ -20,7 +24,7 @@ function CadastrarProfessor(nomeDoProfessor, sobrenomeDoProfessor){
 
             const arquivoEmString = JSON.stringify(arquivoEmLiteral);
            
-            fs.writeFileSync(__dirname + '/banco-de-dados.json', arquivoEmString);
+            fs.writeFileSync(raizDoProjeto + '/banco-de-dados.json', arquivoEmString);
         }else {
             return 'Não é um nome válido';
         }
